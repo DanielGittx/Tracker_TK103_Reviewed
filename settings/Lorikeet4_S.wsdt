@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>Lorikeet4_S/Release</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>997</ColumnWidth1><ColumnWidth2>190</ColumnWidth2><ColumnWidth3>47</ColumnWidth3></Build>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>192</Column0><Column1>27</Column1><Column2>27</Column2><Column3>0</Column3></ColumnWidths>
+      </Workspace>
+      <Find-in-Files>
+        
+        
+        
+        
+      <PreferedWindows><Position>3</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows><Window><Factory>Build</Factory></Window></Windows></PreferedWindows><ColumnWidth0>403</ColumnWidth0><ColumnWidth1>67</ColumnWidth1><ColumnWidth2>604</ColumnWidth2><ColumnWidth3>268</ColumnWidth3></Find-in-Files>
+    <TerminalIO/><Debug-Log><PreferedWindows><Position>3</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows><Window><Factory>Build</Factory></Window><Window><Factory>Find-in-Files</Factory></Window></Windows></PreferedWindows><ColumnWidth0>21</ColumnWidth0><ColumnWidth1>1306</ColumnWidth1></Debug-Log><DRIVER_CUSTOM_SFR><col-names><item>Access</item><item>Address</item><item>Name</item><item>Size</item><item>Zone</item><item>_I0</item></col-names><col-widths><item>120</item><item>150</item><item>150</item><item>50</item><item>120</item><item>20</item></col-widths></DRIVER_CUSTOM_SFR></Static>
+    <Windows>
+      
+      
+    <Wnd0>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-31619-30358</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>Lorikeet4_S</ExpandedNode><ExpandedNode>Lorikeet4_S/Output</ExpandedNode><ExpandedNode>Lorikeet4_S/source</ExpandedNode><ExpandedNode>Lorikeet4_S/source/led.c</ExpandedNode><ExpandedNode>Lorikeet4_S/source/led.c/main.c</ExpandedNode><ExpandedNode>Lorikeet4_S/source/main.c</ExpandedNode><ExpandedNode>Lorikeet4_S/source/pins.c</ExpandedNode><ExpandedNode>Lorikeet4_S/source/pins.c/Output</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd0><Wnd3><Tabs><Tab><Identity>TabID-15777-15790</Identity><TabName>SFR Setup</TabName><Factory>DRIVER_CUSTOM_SFR</Factory></Tab><Tab>
+            <Identity>TabID-20871-30355</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab><Tab><Identity>TabID-24330-16858</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab><Tab><Identity>TabID-13625-25921</Identity><TabName>Find in Files</TabName><Factory>Find-in-Files</Factory><Session/></Tab></Tabs><SelectedTab>3</SelectedTab></Wnd3></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\stm8\doc\infocenter\index.ENU.html</Filename></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\globals.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>43</YPos2><SelStart2>1384</SelStart2><SelEnd2>1384</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\stm8\inc\c\intrinsics.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>15</YPos2><SelStart2>314</SelStart2><SelEnd2>314</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\timers.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>0</SelStart2><SelEnd2>0</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\timers.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>6</YPos2><SelStart2>163</SelStart2><SelEnd2>163</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\led.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>165</YPos2><SelStart2>4835</SelStart2><SelEnd2>4835</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\led.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>23</YPos2><SelStart2>753</SelStart2><SelEnd2>753</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\typedefs.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>0</SelStart2><SelEnd2>0</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\stm8\inc\iostm8s003f3.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>2421</YPos2><SelStart2>81416</SelStart2><SelEnd2>81429</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\pins.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>77</SelStart2><SelEnd2>77</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\pins.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>32</YPos2><SelStart2>1718</SelStart2><SelEnd2>1718</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\stm8\inc\io_macros.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>43</YPos2><SelStart2>519</SelStart2><SelEnd2>519</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\main.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>195</YPos2><SelStart2>4983</SelStart2><SelEnd2>4997</SelEnd2></Tab><ActiveTab>12</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\uart.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>72</YPos2><SelStart2>3022</SelStart2><SelEnd2>3022</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\uart.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>677</SelStart2><SelEnd2>694</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\flash.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>123</SelStart2><SelEnd2>123</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\flash.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>37</YPos2><SelStart2>1035</SelStart2><SelEnd2>1035</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\gps.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>128</SelStart2><SelEnd2>128</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\gps.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>238</YPos2><SelStart2>7642</SelStart2><SelEnd2>7655</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\at.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>285</YPos2><SelStart2>10589</SelStart2><SelEnd2>10589</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\at.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>54</YPos2><SelStart2>2654</SelStart2><SelEnd2>2654</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\payload.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>10</YPos2><SelStart2>488</SelStart2><SelEnd2>488</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\payload.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>2</YPos2><SelStart2>548</SelStart2><SelEnd2>548</SelEnd2></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-05BCDD98><key>iaridepm.enu1</key></Toolbar-05BCDD98></Sizes></Row0></Top><Left><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>225</Bottom><Right>283</Right><x>-2</x><y>-2</y><xscreen>210</xscreen><yscreen>221</yscreen><sizeHorzCX>208127</sizeHorzCX><sizeHorzCY>474249</sizeHorzCY><sizeVertCX>282458</sizeVertCX><sizeVertCY>487124</sizeVertCY></Rect></Wnd0></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>196</Bottom><Right>1011</Right><x>-2</x><y>-2</y><xscreen>1013</xscreen><yscreen>198</yscreen><sizeHorzCX>1003964</sizeHorzCX><sizeHorzCY>424893</sizeHorzCY><sizeVertCX>208127</sizeVertCX><sizeVertCY>474249</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

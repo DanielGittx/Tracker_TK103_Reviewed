@@ -9,6 +9,7 @@
 #include "led.h"
 #include "pins.h"
 #include "timers.h"
+#include "payload.h"
 #include "uart.h"
 #include "flash.h"
 #include "gps.h"
@@ -47,7 +48,7 @@ byte src[200];
 byte length = 0;
 
 
-byte* print_enr_buff;
+
 //byte uart2_RX_out = 0; // Start empty
 //byte uart2_RX_parsing = 0; // Start empty
 
@@ -176,11 +177,12 @@ void main (void)
  __enable_interrupt();
  
 
-  set_duty_cycle (0,0);
+  //set_duty_cycle (0,0);
     
   
-  gsm_AT_INIT();
-  
+  //gsm_AT_INIT();
+  //length = sprintf (src, "RESET");
+  //UARTPrintF( src, length);
   
  // SetDefaultValues();
   
@@ -195,30 +197,34 @@ void main (void)
      //strlen
      //memcmp
      //atoi /itoa
-     //len = sprintf(src, uart2_RX_data);
-       
-    gsm_gps_response_matching();
+     
+      
+   // gsm_gps_response_matching();
       
     
     
    if (flag.one_second == 1)  
    {  
+     byte leng;
+      //  leng = sprintf(src, print_enr_buff);
+      //  UARTPrintF(src, leng);
      
-     print_enr_buff = device_enrolling_message();
-     
-        gsm_tick();
-       
-
-     
-       
-     if ( security_pulses_count == 1)
+      byte enrolling_msg = 0;
+      enrolling_msg++;
+      if (enrolling_msg == 1)
+      {
+       // leng = sprintf(src, "TESTING");
+       // UARTPrintF(src,leng);
+      }
+    
+       // gsm_tick();
+      
+  if ( security_pulses_count == 1)              //
      {
-   
-          at_parse(2);
- 
-          
+        at_parse(2);  
         security_pulses_count =0;
      }
+      
                     
      flag.one_second =0;           
     }

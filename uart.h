@@ -19,6 +19,7 @@ extern byte uart2_RX_out; ///< Index to the next unprocessed location in rx buff
 extern byte uart2_RX_parsing; ///< Index up to where the processing routine has gotten
 extern void UART_RECEIVE_Churn (void);
 extern void Uart_buffer_reset (byte t);
+extern void print_enr_buff_reset (void);
 
 
 

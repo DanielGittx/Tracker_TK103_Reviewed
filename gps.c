@@ -14,6 +14,7 @@
 #include "uart.h"
 #include "flash.h"
 #include "gps.h"
+#include "payload.h"
 #include <intrinsics.h>         // Interrupts Inlines
 #include <string.h> // Memcpy
 #include <stdio.h> // sprintf
@@ -255,9 +256,20 @@ void at_parse (byte t)
       {
           Uart_buffer_reset(2);
       }
-      else      // IMEI trap
+      else      // IMEI trapped ; WE NEED IMEI TO BUILD ENROLLING MESSAGE
       {
-          UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
+       
+        
+        if (strlen(print_enr_buff) != 25)                  // We are not sure what we have in enrolling message buffer    ;(
+            {
+                print_enr_buff_reset();                         // So Reset stuff! 
+                device_enrolling_message(uart2_RX_data);        // build up enrolling message afresh
+            }
+         else
+            {
+                length = sprintf(src, print_enr_buff);         //we already have full message 
+                UARTPrintF(src,length);              
+            }
           Uart_buffer_reset(2);
           response_flags = RESP_IMEI;
       }

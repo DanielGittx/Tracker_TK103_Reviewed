@@ -7,6 +7,7 @@
 #include <stdio.h> // sprintf
 #include "typedefs.h"
 #include "uart.h"
+#include "payload.h"
 
 
 #define UART_LF		   0x0A
@@ -19,6 +20,7 @@
 void InitialiseUART(void);
 void UARTPrintF(byte *message, byte len);
 void UART_RECEIVE_Churn (void);
+void print_enr_buff_reset (void);
 
 
 
@@ -105,6 +107,16 @@ void Uart_buffer_reset (byte t)
   {
     uart2_RX_data[i] = 0;
   }
+}
+    
+void print_enr_buff_reset (void)
+{
+byte i;
+  for (i=0; i<25; i++)
+  {
+     print_enr_buff[i] = 0;
+  }
+  
 }
 
 #endif

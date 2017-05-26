@@ -6,42 +6,51 @@
   <configuration>
     <name>Debug</name>
     <outputs>
+      <file>$TOOLKIT_DIR$\inc\io_macros.h</file>
+      <file>$PROJ_DIR$\globals.h</file>
+      <file>$TOOLKIT_DIR$\lib\dlstm8smn.a</file>
+      <file>$PROJ_DIR$\Debug\Obj\led.o</file>
+      <file>$PROJ_DIR$\Debug\Exe\Lorikeet4_S.out</file>
+      <file>$PROJ_DIR$\led.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\pins.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+      <file>$PROJ_DIR$\timers.h</file>
+      <file>$TOOLKIT_DIR$\lib\dbgstm8smd.a</file>
+      <file>$PROJ_DIR$\typedefs.h</file>
+      <file>$PROJ_DIR$\pins.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\pins.pbi</file>
+      <file>$PROJ_DIR$\Debug\List\Lorikeet4_S.map</file>
       <file>$PROJ_DIR$\Debug\Obj\led.pbi</file>
       <file>$TOOLKIT_DIR$\inc\iostm8s003f3.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\led.o</file>
-      <file>$PROJ_DIR$\Debug\Obj\pins.o</file>
-      <file>$PROJ_DIR$\Debug\Obj\pins.pbi</file>
-      <file>$TOOLKIT_DIR$\inc\io_macros.h</file>
-      <file>$PROJ_DIR$\pins.h</file>
-      <file>$PROJ_DIR$\globals.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
       <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
-      <file>$TOOLKIT_DIR$\lib\dbgstm8smd.a</file>
-      <file>$PROJ_DIR$\Debug\Exe\Lorikeet4_S.out</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.o</file>
-      <file>$PROJ_DIR$\led.h</file>
-      <file>$PROJ_DIR$\Debug\List\Lorikeet4_S.map</file>
       <file>$TOOLKIT_DIR$\config\lnkstm8l151f3.icf</file>
-      <file>$PROJ_DIR$\timers.h</file>
-      <file>$TOOLKIT_DIR$\lib\dlstm8smn.a</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
-      <file>$PROJ_DIR$\typedefs.h</file>
       <file>$PROJ_DIR$\main.c</file>
-      <file>$PROJ_DIR$\led.c</file>
       <file>$PROJ_DIR$\pins.c</file>
+      <file>$PROJ_DIR$\led.c</file>
     </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 15 4</file>
+        </tool>
+      </outputs>
+    </file>
     <file>
       <name>$PROJ_DIR$\Debug\Exe\Lorikeet4_S.out</name>
       <outputs>
         <tool>
           <name>ILINK</name>
-          <file> 14</file>
+          <file> 15</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>ILINK</name>
-          <file> 15 2 12 3 17 10</file>
+          <file> 19 3 8 7 2 10</file>
         </tool>
       </inputs>
     </file>
@@ -50,48 +59,25 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 9</file>
+          <file> 18</file>
         </tool>
         <tool>
           <name>ICCSTM8</name>
-          <file> 12</file>
+          <file> 8</file>
         </tool>
         <tool>
           <name>__cstat</name>
-          <file> 18</file>
+          <file> 6</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 5 1 7 19 13 6 16 8</file>
+          <file> 0 17 1 11 5 12 9 13</file>
         </tool>
         <tool>
           <name>ICCSTM8</name>
-          <file> 1 5 7 19 13 6 16 8</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\led.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 0</file>
-        </tool>
-        <tool>
-          <name>ICCSTM8</name>
-          <file> 2</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 5 1 7 19 13 6 8</file>
-        </tool>
-        <tool>
-          <name>ICCSTM8</name>
-          <file> 1 5 7 19 13 6 8</file>
+          <file> 17 0 1 11 5 12 9 13</file>
         </tool>
       </inputs>
     </file>
@@ -100,7 +86,30 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 4</file>
+          <file> 14</file>
+        </tool>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 7</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 0 17 1 11 5 12 13</file>
+        </tool>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 17 0 1 11 5 12 13</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\led.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 16</file>
         </tool>
         <tool>
           <name>ICCSTM8</name>
@@ -110,22 +119,13 @@
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 5 1 7 19 13 6 8</file>
+          <file> 0 17 1 11 5 12 13</file>
         </tool>
         <tool>
           <name>ICCSTM8</name>
-          <file> 1 5 7 19 13 6 8</file>
+          <file> 17 0 1 11 5 12 13</file>
         </tool>
       </inputs>
-    </file>
-    <file>
-      <name>[ROOT_NODE]</name>
-      <outputs>
-        <tool>
-          <name>ILINK</name>
-          <file> 14 11</file>
-        </tool>
-      </outputs>
     </file>
     <forcedrebuild>
       <name>[MULTI_TOOL]</name>
@@ -135,86 +135,95 @@
   <configuration>
     <name>Release</name>
     <outputs>
-      <file>$PROJ_DIR$\flash.h</file>
-      <file>$PROJ_DIR$\payload.c</file>
-      <file>$PROJ_DIR$\flash.c</file>
-      <file>$PROJ_DIR$\uart.h</file>
-      <file>$TOOLKIT_DIR$\inc\iostm8s003f3.h</file>
-      <file>$PROJ_DIR$\gps.h</file>
-      <file>$TOOLKIT_DIR$\lib\dlstm8smn.h</file>
-      <file>$PROJ_DIR$\Release\Obj\gps.o</file>
-      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
-      <file>$PROJ_DIR$\at.h</file>
-      <file>$TOOLKIT_DIR$\inc\io_macros.h</file>
-      <file>$PROJ_DIR$\payload.h</file>
-      <file>$PROJ_DIR$\pins.h</file>
-      <file>$PROJ_DIR$\globals.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
-      <file>$PROJ_DIR$\led.h</file>
-      <file>$PROJ_DIR$\Release\Obj\uart.o</file>
-      <file>$PROJ_DIR$\uart.c</file>
-      <file>$PROJ_DIR$\timers.h</file>
-      <file>$TOOLKIT_DIR$\lib\dlstm8smn.a</file>
-      <file>$PROJ_DIR$\typedefs.h</file>
-      <file>$PROJ_DIR$\main.c</file>
-      <file>$PROJ_DIR$\led.c</file>
-      <file>$PROJ_DIR$\gps.c</file>
-      <file>$PROJ_DIR$\pins.c</file>
-      <file>$PROJ_DIR$\at.c</file>
-      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
       <file>$PROJ_DIR$\Release\Obj\at.__cstat.et</file>
+      <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
       <file>$PROJ_DIR$\Release\Obj\payload.pbi</file>
-      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
-      <file>$TOOLKIT_DIR$\config\lnkstm8s003f3.icf</file>
-      <file>$PROJ_DIR$\Release\Obj\uart.pbi</file>
-      <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
-      <file>$PROJ_DIR$\Release\Obj\Lorikeet4_S.pbd</file>
-      <file>$PROJ_DIR$\Release\Obj\gps.__cstat.et</file>
-      <file>$PROJ_DIR$\Release\Obj\led.o</file>
-      <file>$PROJ_DIR$\Release\Obj\main.__cstat.et</file>
-      <file>$PROJ_DIR$\Release\Obj\at.o</file>
-      <file>$PROJ_DIR$\Release\Obj\pins.o</file>
-      <file>$TOOLKIT_DIR$\lib\dbgstm8smn.a</file>
-      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
-      <file>$PROJ_DIR$\Release\Obj\gps.pbi</file>
-      <file>$PROJ_DIR$\Release\Obj\led.__cstat.et</file>
-      <file>$PROJ_DIR$\Release\Obj\main.pbi</file>
-      <file>$PROJ_DIR$\Release\Obj\payload.__cstat.et</file>
-      <file>$PROJ_DIR$\Release\Obj\uart.__cstat.et</file>
-      <file>$PROJ_DIR$\Release\Obj\payload.o</file>
-      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
       <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
       <file>$PROJ_DIR$\Release\Obj\main.o</file>
-      <file>$PROJ_DIR$\Release\Obj\led.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\uart.pbi</file>
+      <file>$TOOLKIT_DIR$\lib\dbgstm8smn.a</file>
       <file>$PROJ_DIR$\Release\Exe\Lorikeet4_S.out</file>
       <file>$PROJ_DIR$\Release\Obj\pins.pbi</file>
-      <file>$PROJ_DIR$\Release\Obj\pins.__cstat.et</file>
       <file>$PROJ_DIR$\Release\Exe\Lorikeet4_S.hex</file>
       <file>$PROJ_DIR$\Release\List\Lorikeet4_S.map</file>
+      <file>$PROJ_DIR$\Release\Obj\pins.__cstat.et</file>
       <file>$PROJ_DIR$\Release\Obj\flash.o</file>
-      <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+      <file>$PROJ_DIR$\Release\Obj\pins.o</file>
+      <file>$PROJ_DIR$\Release\Obj\led.__cstat.et</file>
+      <file>$PROJ_DIR$\Release\Obj\gps.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\payload.__cstat.et</file>
+      <file>$PROJ_DIR$\Release\Obj\led.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\main.__cstat.et</file>
+      <file>$PROJ_DIR$\Release\Obj\led.o</file>
+      <file>$PROJ_DIR$\Release\Obj\uart.__cstat.et</file>
+      <file>$PROJ_DIR$\Release\Obj\payload.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$PROJ_DIR$\Release\Obj\Lorikeet4_S.pbd</file>
+      <file>$TOOLKIT_DIR$\config\lnkstm8s003f3.icf</file>
+      <file>$PROJ_DIR$\Release\Obj\gps.__cstat.et</file>
+      <file>$PROJ_DIR$\Release\Obj\at.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
       <file>$PROJ_DIR$\Release\Obj\flash.pbi</file>
       <file>$PROJ_DIR$\Release\Obj\at.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\string.h</file>
       <file>$PROJ_DIR$\Release\Obj\flash.__cstat.et</file>
+      <file>$PROJ_DIR$\flash.h</file>
+      <file>$TOOLKIT_DIR$\inc\io_macros.h</file>
+      <file>$PROJ_DIR$\globals.h</file>
+      <file>$PROJ_DIR$\payload.h</file>
+      <file>$TOOLKIT_DIR$\lib\dlstm8smn.a</file>
+      <file>$PROJ_DIR$\led.h</file>
+      <file>$PROJ_DIR$\gps.h</file>
+      <file>$PROJ_DIR$\flash.c</file>
+      <file>$PROJ_DIR$\payload.c</file>
+      <file>$PROJ_DIR$\timers.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\uart.h</file>
+      <file>$TOOLKIT_DIR$\lib\dlstm8smn.h</file>
+      <file>$PROJ_DIR$\typedefs.h</file>
+      <file>$PROJ_DIR$\pins.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+      <file>$PROJ_DIR$\at.h</file>
+      <file>$PROJ_DIR$\uart.c</file>
+      <file>$TOOLKIT_DIR$\inc\iostm8s003f3.h</file>
+      <file>$PROJ_DIR$\Release\Obj\gps.o</file>
+      <file>$PROJ_DIR$\Release\Obj\uart.o</file>
+      <file>$PROJ_DIR$\gps.c</file>
+      <file>$PROJ_DIR$\main.c</file>
+      <file>$PROJ_DIR$\pins.c</file>
+      <file>$PROJ_DIR$\at.c</file>
+      <file>$PROJ_DIR$\led.c</file>
     </outputs>
     <file>
-      <name>$PROJ_DIR$\payload.c</name>
+      <name>[ROOT_NODE]</name>
       <outputs>
         <tool>
-          <name>BICOMP</name>
-          <file> 29</file>
+          <name>ILINK</name>
+          <file> 8 11</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Release\Exe\Lorikeet4_S.out</name>
+      <outputs>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 10</file>
         </tool>
         <tool>
-          <name>__cstat</name>
-          <file> 45</file>
+          <name>ILINK</name>
+          <file> 11</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
-          <name>BICOMP</name>
-          <file> 12 10 11 3 20 0 59 9 41 30 5 4 13 15 14 33 48 26 49 8 6 50 27</file>
+          <name>ILINK</name>
+          <file> 29 31 13 56 23 5 25 16 57 41 7</file>
         </tool>
       </inputs>
     </file>
@@ -223,17 +232,36 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 60</file>
+          <file> 33</file>
         </tool>
         <tool>
           <name>__cstat</name>
-          <file> 62</file>
+          <file> 36</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 10 4 0</file>
+          <file> 38 55 37</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\payload.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 2</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 20</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 51 38 40 48 50 37 35 53 14 26 43 55 39 42 52 15 32 3 4 47 49 27 1</file>
         </tool>
       </inputs>
     </file>
@@ -242,55 +270,17 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 32</file>
+          <file> 6</file>
         </tool>
         <tool>
           <name>__cstat</name>
-          <file> 46</file>
+          <file> 24</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 49 33 41 10 3 48 26 50 4 59 20 8 6 27 30</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\main.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 44</file>
-        </tool>
-        <tool>
-          <name>__cstat</name>
-          <file> 37</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 3 20 59 48 10 12 5 9 49 4 13 15 18 0 14 33 8 30 41 26 6 50 27</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\led.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 52</file>
-        </tool>
-        <tool>
-          <name>__cstat</name>
-          <file> 43</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 20 10 12 4 13 15 14</file>
+          <file> 4 15 47 38 48 32 50 55 35 40 14 26 3 49 27 1</file>
         </tool>
       </inputs>
     </file>
@@ -299,17 +289,36 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 42</file>
+          <file> 18</file>
         </tool>
         <tool>
           <name>__cstat</name>
-          <file> 35</file>
+          <file> 30</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 12 10 14 20 48 3 0 33 49 5 4 13 15 59 9 8 30 41 26 6 50 27</file>
+          <file> 38 51 40 50 32 48 37 35 4 43 55 39 42 52 15 53 47 26 14 3 49 27 1</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 19</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 22</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 40 50 52 38 32 51 37 15 53 4 55 39 42 46 48 43 35 47 26 14 3 49 27 1</file>
         </tool>
       </inputs>
     </file>
@@ -318,17 +327,17 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 54</file>
+          <file> 9</file>
         </tool>
         <tool>
           <name>__cstat</name>
-          <file> 55</file>
+          <file> 12</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 20 10 12 4 13 15 14</file>
+          <file> 50 38 51 55 39 42 52</file>
         </tool>
       </inputs>
     </file>
@@ -337,51 +346,46 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 61</file>
+          <file> 34</file>
+        </tool>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 31 13 56 23 5 25 16 57</file>
         </tool>
         <tool>
           <name>__cstat</name>
-          <file> 28</file>
+          <file> 0</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 49 20 0 59 10 12 9 8 41 4 13 15 3 5 14 33 48 26 30 6 50 27</file>
+          <file> 14 37 26 50 35 38 51 53 32 3 55 39 42 48 43 52 15 4 47 49 27 1</file>
         </tool>
         <tool>
           <name>ICCSTM8</name>
-          <file> 4 10 13 20 15 12 3 0 5 9 14 59 41 49 8 6 50 26 30 48 33 27 2 23 22 21 18 1 11 24 17</file>
+          <file> 55 38 39 50 42 51 48 37 43 53 52 35 14 4 47 49 27 3 26 32 15 1 44 58 40 62 59 46 45 60 54</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\Release\Exe\Lorikeet4_S.out</name>
+      <name>$PROJ_DIR$\led.c</name>
       <outputs>
         <tool>
-          <name>OBJCOPY</name>
-          <file> 56</file>
+          <name>BICOMP</name>
+          <file> 21</file>
         </tool>
         <tool>
-          <name>ILINK</name>
-          <file> 57</file>
+          <name>__cstat</name>
+          <file> 17</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
-          <name>ILINK</name>
-          <file> 31 38 58 7 36 51 47 39 16 19 40</file>
+          <name>BICOMP</name>
+          <file> 50 38 51 55 39 42 52</file>
         </tool>
       </inputs>
-    </file>
-    <file>
-      <name>[ROOT_NODE]</name>
-      <outputs>
-        <tool>
-          <name>ILINK</name>
-          <file> 53 57</file>
-        </tool>
-      </outputs>
     </file>
   </configuration>
 </project>

@@ -19,7 +19,7 @@
 #include <stdio.h> // sprintf
 
 // Messages to server //
-byte* device_enrolling_message(void);
+void device_enrolling_message(byte* uart2_RX_data_ptr );
 void continous_feedback_message(byte t);
 void handshaking_message(byte t);
 
@@ -27,19 +27,20 @@ void handshaking_message(byte t);
 void server_response (void);        // Server response after receiving ENROLLING MESSAGE from device
 void handshaking_message_answer (void);
 
+byte print_enr_buff[50];
 
-
-byte* device_enrolling_message(void)
+void device_enrolling_message(byte* uart2_RX_data_ptr )
 {
-  byte i;
-  byte enrolling_msg[] = "##,imei:";
-    
-  for (i=0; i<14; i++)
-  {
-    enrolling_msg[9+i] = uart2_RX_data[i];                // Store IMEI
-  }
+  byte leng,i;
+  byte _enr_buff1[15] = "##,imei:";
+  byte _enr_buff2[10] = ",A;";
   
-  return enrolling_msg;
+  strcat(print_enr_buff,_enr_buff1);
+  strcat(print_enr_buff,uart2_RX_data);
+  strcat(print_enr_buff,_enr_buff2);
+  
+  leng = sprintf(src, print_enr_buff);
+  UARTPrintF(src,leng);
 }
 
 

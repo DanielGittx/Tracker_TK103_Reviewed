@@ -16,7 +16,7 @@ extern byte print_enr_buff[50];
 
 // Messages to server //
 extern void device_enrolling_message(byte* uart2_RX_data_ptr );
-extern void continous_feedback_message(byte t);
+extern void continous_feedback_message(byte* _imei);                            // 
 extern void handshaking_message(byte t);
 
 //Messages from server (server ACKS)

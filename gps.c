@@ -22,12 +22,13 @@
 
 
 
-void at_parse (byte t);
-void gsm_gps_response_matching (void);
+byte at_parse (byte t);
+void gsm_gps_response_matching (byte parse_flags );
 void gsm_gps_turnoff( void );
 void gsm_gps_turnon( void );
 void gsm_tick (void);
 void TK103_protocol (void);
+void gsm_sequencer (void);
 
 
 
@@ -36,19 +37,34 @@ byte ip_initial_mode_retry = 0;
 byte global_power_mode_state =0;
 
 
-
-
-
-void at_parse (byte t)
+void gsm_sequencer (void)
 {
-  byte parsed = 0, tail = 0, n,p,q,r,s,u,v,w,x,y,z;
+  byte parse_flags, leng;
+  parse_flags = at_parse( response_flags ); 
+  
+  //leng = sprintf (src, "Parse flags:response_flags: %d,%d",parse_flags,response_flags);
+  //UARTPrintF(src,leng);
+  
+  if (( parse_flags & response_flags) != 0 )
+     {
+            //leng = sprintf (src, "Response matched");
+            //UARTPrintF(src,leng);
+            gsm_gps_response_matching(parse_flags);
+            
+     }   
+}
+
+
+byte at_parse (byte t)
+{
+  byte parsed = 0, retval = 0, tail = 0, n,p,q,r,s,u,v,w,x,y,z;
   byte NMEA_ID [] = "$GPGGA,";      //First 7 bytes of NMEA Sentence.
   byte buff[200];
     //byte gps_info;
  
     if (memcmp (uart2_RX_data,"OK", 2) == 0)
     {
-          response_flags = RESP_OK; // Await this response
+       retval = RESP_OK; // Await this response
       
        //UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
        Uart_buffer_reset(2);
@@ -110,7 +126,7 @@ void at_parse (byte t)
     }
     else if (memcmp (uart2_RX_data,"SHUT OK",7)== 0)
     {
-      response_flags = RESP_SHUT_OK;
+      retval = RESP_SHUT_OK;
       //UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
       Uart_buffer_reset(2);
     }    
@@ -256,7 +272,7 @@ void at_parse (byte t)
       {
           Uart_buffer_reset(2);
       }
-      else      // IMEI trapped ; WE NEED IMEI TO BUILD ENROLLING MESSAGE
+      else      // IMEI trapped ; WE NEED IMEI TO BUILD ENROLLING MESSAGE (Log on request)
       {
        
         
@@ -279,6 +295,8 @@ void at_parse (byte t)
     {
           Uart_buffer_reset(2);                  // TRASH AREA, JUST DISCARD IT :(
     }   
+    
+    return retval;
     
 }
 void gsm_tick (void)
@@ -384,62 +402,62 @@ void gsm_tick (void)
   */
 }
 
-void gsm_gps_response_matching (void)
+void gsm_gps_response_matching (byte _parse_flags )
 {
-  byte response_state = 0;
+ // byte parse_flags = 0;
    
   switch (gsm_state)
   {
     
   case STATE_INIT:
-    if (response_flags == RESP_OK)
+    if (_parse_flags == RESP_OK)
        gps_AT_SET_POWER_MODE(ON);
        break;
        
   case STATE_GPS_POWER_ON:
-    if (response_flags == RESP_OK)
+    if (_parse_flags == RESP_OK)
      gps_AT_SET_AUTONOMY_MODE();
     break;
         
   case STATE_GPS_AUTONOMY_MODE:
-    if (response_flags == RESP_OK)
+    if (_parse_flags == RESP_OK)
       gps_AT_SET_FULL_FUNCTIONALITY();
     break;
     
   case STATE_GPS_FULL_FUNCTIONALITY:
-    if (response_flags == RESP_OK)
+    if (_parse_flags == RESP_OK)
       gsm_AT_GPRS_SHUTDOWN ();
     break;
     
   case STATE_GPRS_SHUTDOWN:
-    if (response_flags == RESP_SHUT_OK)
+    if (_parse_flags == RESP_SHUT_OK)
       gsm_AT_STARTUP_SINGLE_IP_CONNECTION ();
        
     break;
     
   case STATE_STARTUP_SINGLE_IP_CONNECTION:
-    if (response_flags == RESP_OK)
+    if (_parse_flags == RESP_OK)
          gsm_AT_IP_INITIAL_MODE();
          //ip_initial_mode_retry++;             //Incremented inside funtion
       break;
       
   case STATE_IP_INITIAL_MODE:
-    if (response_flags == RESP_OK)
+    if (_parse_flags == RESP_OK)
       gsm_AT_SETCGDCONT();
     break;
      
   case STATE_SETCGDCONT:
-    if (response_flags == RESP_OK)
+    if (_parse_flags == RESP_OK)
       gsm_AT_CGACT();
     break;
     
   case STATE_SETCGACT:
-    if (response_flags == RESP_OK)
+    if (_parse_flags == RESP_OK)
       gsm_AT_CGATT();
     break;
       
   case STATE_SETCGATT:
-    if (response_flags == RESP_OK)
+    if (_parse_flags == RESP_OK)
       gsm_AT_IP_INITIAL_MODE ();
      if(ip_initial_mode_retry == 2)
      {
@@ -456,7 +474,7 @@ void gsm_gps_response_matching (void)
     */
     
   case STATE_SETAPN_START_TASK:
-     if (response_flags == RESP_OK)
+     if (_parse_flags == RESP_OK)
        gsm_AT_IP_INITIAL_MODE ();
        if(ip_initial_mode_retry == 3)
        {
@@ -466,37 +484,37 @@ void gsm_gps_response_matching (void)
      break;
        
   case STATE_BRINGUP_WIRELESS_CONNECTION_GPRS:
-    if (response_flags == RESP_OK)
+    if (_parse_flags == RESP_OK)
       gsm_AT_GET_IP();
     break;
     
   case STATE_GET_IP:
-     if (response_flags == RESP_OK)
+     if (_parse_flags == RESP_OK)
        gps_AT_GET_LOCATION_INFO ();
      break;
      
   case STATE_GPS_LOCATION_INFOR:
-    if (response_flags == RESP_NMEA_DATA)
+    if (_parse_flags == RESP_NMEA_DATA)
       gsm_AT_GET_IMEI();
     break;
     
   case STATE_GETIMEI:
-    if (response_flags == RESP_IMEI)
+    if (_parse_flags == RESP_IMEI)
       gsm_AT_CONNECT_TO_SERVER();
     break;
     
   case STATE_CONNECT_TO_SERVER:
-    if (response_flags == RESP_CONNECT_OK | RESP_CONNECT_FAIL)
+    if (_parse_flags == RESP_CONNECT_OK | RESP_CONNECT_FAIL)
       gsm_AT_SEND_TCP_PACKET ();
     break;
     
   case STATE_SEND_TCP_PACKET:
-    if (response_flags == RESP_OK)
+    if (_parse_flags == RESP_OK)
       gsm_AT_CLOSE_TCP_CONNECTION();
     break;
     
   case STATE_CLOSE_TCP_CONNECTION:
-    if (response_flags == RESP_OK)
+    if (_parse_flags == RESP_OK)
         gps_AT_SET_POWER_MODE(OFF);
         // MODEM HW IS STILL POWERED!
     break;

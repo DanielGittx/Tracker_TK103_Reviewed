@@ -67,6 +67,7 @@ void gsm_AT_INIT( void )
     gsm_state = STATE_INIT; 
     memcpy(src, "AT&F0\r\n", 7); //Factory Defaults
     UARTPrintF(src, 7);  //post to Modem
+    response_flags = RESP_OK;
     gsm_tick_send = AT_SEND_TIMEOUT; // Start a Modem not responding timeout
     // gsm_tick_send = 0;
     
@@ -84,6 +85,7 @@ void gps_AT_SET_POWER_MODE( byte power_mode_state )
     gsm_state = STATE_GPS_POWER_ON; 
     memcpy(src, "AT+CGPSPWR=1\r\n", 14); //Factory Defaults
     UARTPrintF(src, 14);  //post to Modem
+    response_flags = RESP_OK;
     gsm_tick_send = AT_SEND_TIMEOUT; // Start a Modem not responding timeout
     gsm_timeout = GSM_TIMEOUT; //
   }
@@ -104,8 +106,8 @@ void gps_AT_SET_AUTONOMY_MODE (void)
     gsm_state = STATE_GPS_AUTONOMY_MODE; 
     memcpy(src, "AT+CGPSRST=1\r\n", 14); //GPS Reset
     UARTPrintF(src, 14);  //post to Modem
+    response_flags = RESP_OK;
     gsm_tick_send = AT_SEND_TIMEOUT; // Start a Modem not responding timeout
-   // gsm_tick_send = 0;
     gsm_timeout = GSM_TIMEOUT; //
   
 }
@@ -115,6 +117,7 @@ void gps_AT_SET_FULL_FUNCTIONALITY (void)
     gsm_state = STATE_GPS_FULL_FUNCTIONALITY; 
     memcpy(src, "AT+CFUN=1\r\n", 11); //GPS Reset
     UARTPrintF(src, 11);  //post to Modem
+    response_flags = RESP_OK;
     gsm_tick_send = AT_SEND_TIMEOUT; // Start a Modem not responding timeout
     gsm_timeout = GSM_TIMEOUT; //
   
@@ -179,6 +182,7 @@ void gsm_AT_GPRS_SHUTDOWN (void)
     gsm_state = STATE_GPRS_SHUTDOWN;
     memcpy(src, "AT+CIPSHUT\r\n", 12); // 
     UARTPrintF(src, 12);  //post to Modem
+    response_flags = RESP_SHUT_OK;
     gsm_tick_send = AT_SEND_TIMEOUT;                        // Start a Modem not responding timeout
     gsm_timeout = GSM_TIMEOUT; //
   
@@ -188,6 +192,7 @@ void gsm_AT_STARTUP_SINGLE_IP_CONNECTION (void)
     gsm_state = STATE_STARTUP_SINGLE_IP_CONNECTION;
     memcpy(src, "AT+CIPMUX=0\r\n", 13); // 
     UARTPrintF(src, 13);  //post to Modem
+    response_flags = RESP_OK;
     gsm_tick_send = AT_SEND_TIMEOUT;                        // Start a Modem not responding timeout
     gsm_timeout = GSM_TIMEOUT; //
   
@@ -310,6 +315,7 @@ void gsm_AT_CLOSE_TCP_CONNECTION(void)
    UARTPrintF( src, 13 ); // Write the AT command - 
    gsm_tick_send = AT_SEND_TIMEOUT; // Start a Modem not responding timeout
    gsm_timeout = GSM_TIMEOUT; //
+   
   
 }
 

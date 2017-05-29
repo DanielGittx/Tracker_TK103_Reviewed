@@ -20,7 +20,7 @@
 
 // Messages to server //
 void device_enrolling_message(byte* uart2_RX_data_ptr );
-void continous_feedback_message(byte t);
+void continous_feedback_message(byte* _imei);
 void handshaking_message(byte t);
 
 //Messages from server (server ACKS)

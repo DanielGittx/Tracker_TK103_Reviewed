@@ -180,7 +180,7 @@ void main (void)
   //set_duty_cycle (0,0);
     
   
-  //gsm_AT_INIT();
+  gsm_AT_INIT();
   //length = sprintf (src, "RESET");
   //UARTPrintF( src, length);
   
@@ -198,9 +198,9 @@ void main (void)
      //memcmp
      //atoi /itoa
      
-      
-   // gsm_gps_response_matching();
-      
+    // gsm_gps_response_matching(2);
+   
+     ///////gsm_churn(); 
     
     
    if (flag.one_second == 1)  
@@ -217,12 +217,15 @@ void main (void)
        // UARTPrintF(src,leng);
       }
     
-       // gsm_tick();
+        gsm_tick();
+       // gsm_gps_response_matching(2);
       
   if ( security_pulses_count == 1)              //
      {
-        at_parse(2);  
-        security_pulses_count =0;
+       //at_parse(20);
+       
+       gsm_sequencer();
+       security_pulses_count =0;
      }
       
                     

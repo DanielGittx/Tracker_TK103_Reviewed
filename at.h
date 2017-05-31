@@ -3,7 +3,7 @@
 
 #include "typedefs.h"
 
-#define AT_SEND_TIMEOUT                 3     // 3 Seconds - This should be enough time to allow processing finish
+#define AT_SEND_TIMEOUT                 5     // Seconds - This should be enough time to allow processing finish
 #define GSM_TIMEOUT                    20     // 
 
 extern void gsm_AT_INIT( void );
@@ -37,8 +37,7 @@ enum
   STATE_GPS_POWER_ON,
   STATE_GPS_POWER_OFF,
   STATE_GPS_AUTONOMY_MODE,
- // STATE_GPS_RESET,
-   STATE_GPS_LOCATION_INFOR,
+  STATE_GPS_LOCATION_INFOR,
   STATE_GPS_FULL_FUNCTIONALITY,
   STATE_GPRS_SHUTDOWN,
   STATE_CMGF,

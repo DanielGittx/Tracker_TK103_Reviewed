@@ -119,8 +119,7 @@ void gps_AT_SET_FULL_FUNCTIONALITY (void)
     UARTPrintF(src, 11);  //post to Modem
     response_flags = RESP_OK;
     gsm_tick_send = AT_SEND_TIMEOUT; // Start a Modem not responding timeout
-    gsm_timeout = GSM_TIMEOUT; //
-  
+    gsm_timeout = GSM_TIMEOUT;  
 }
 
 void gps_AT_GET_LOCATION_INFO (void)
@@ -129,7 +128,7 @@ void gps_AT_GET_LOCATION_INFO (void)
     memcpy(src, "AT+CGPSINF=32\r\n", 15); //GPS Reset
     UARTPrintF(src, 15);  //post to Modem
     gsm_tick_send = AT_SEND_TIMEOUT; // Start a Modem not responding timeout
-    gsm_timeout = GSM_TIMEOUT; //
+    gsm_timeout = GSM_TIMEOUT; 
    
 }
 
@@ -200,7 +199,7 @@ void gsm_AT_STARTUP_SINGLE_IP_CONNECTION (void)
 
 void gsm_AT_IP_INITIAL_MODE (void)
 {
-    ip_initial_mode_retry++;
+    //ip_initial_mode_retry++;
     gsm_state = STATE_IP_INITIAL_MODE;
     memcpy(src, "AT+CIPSTATUS\r\n", 14); // 
     UARTPrintF(src, 14);  //post to Modem
@@ -232,13 +231,19 @@ byte i;
     UARTPrintF( src, i ); // Write the AT command 
     gsm_tick_send = AT_SEND_TIMEOUT; // Start a Modem not responding timeout
     gsm_timeout = GSM_TIMEOUT; //
+
 }
 
 void gsm_AT_GET_IMEI (void)
 {
+  byte leng;
     gsm_state = STATE_GETIMEI; // Move on to next state
     memcpy( src,"AT+GSN\r\n", 8 ); // Request IMEI
     UARTPrintF( src, 8 ); // Write the AT command - 
+    
+   // leng = sprintf(src, "STATE_GETIMEI:%d",gsm_state);
+   // UARTPrintF(src,leng);
+    
     gsm_tick_send = AT_SEND_TIMEOUT; // Start a Modem not responding timeout
     gsm_timeout = GSM_TIMEOUT; //
   

@@ -61,96 +61,10 @@ byte at_parse (byte t)
   byte NMEA_ID [] = "$GPGGA,";      //First 7 bytes of NMEA Sentence.
   byte buff[200];
     //byte gps_info;
- 
-    if (memcmp (uart2_RX_data,"OK", 2) == 0)
+  
+   if (memcmp (uart2_RX_data,NMEA_ID, 7) == 0)           //This is a good packet we can go ahead and parse it
     {
-       retval = RESP_OK; // Await this response
-      
-       //UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
-       Uart_buffer_reset(2);
-    }
-    else if (memcmp (uart2_RX_data,"ERROR",5)== 0)
-    {
-       //UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
-       Uart_buffer_reset(2);
-    }
-    else if (memcmp (uart2_RX_data,"+COPS: ",7)== 0)
-    {
-             UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
-       Uart_buffer_reset(2);
-    }
-    else if (memcmp (uart2_RX_data,"+CREG: ",7)== 0)
-    {
-             UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
-       Uart_buffer_reset(2);
-    }
-    else if (memcmp (uart2_RX_data,"+CGATT: ",8)== 0)
-    {
-             UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
-       Uart_buffer_reset(2);
-    }
-    else if (memcmp (uart2_RX_data,"STATE: IP INITIAL",17)== 0)
-    {
-             UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
-       Uart_buffer_reset(2);
-    }
-    else if (memcmp (uart2_RX_data,"CONNECT OK",10)== 0)
-    {
-             UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
-       Uart_buffer_reset(2);
-    }
-    else if (memcmp (uart2_RX_data,"CONNECT FAIL",12)== 0)
-    {
-             UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
-       Uart_buffer_reset(2);
-    }
-    else if (memcmp (uart2_RX_data,"+CME ERROR",10)== 0)
-    {
-             UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
-       Uart_buffer_reset(2);
-    }
-    else if (memcmp (uart2_RX_data,"ALREADY CONNECT",15)== 0)
-    {
-             UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
-       Uart_buffer_reset(2);
-    }
-    else if (memcmp (uart2_RX_data,"SEND OK",7)== 0)
-    {
-             UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
-       Uart_buffer_reset(2);
-    }
-    else if (memcmp (uart2_RX_data,"CLOSE OK",7)== 0)
-    {
-             UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
-       Uart_buffer_reset(2);
-    }
-    else if (memcmp (uart2_RX_data,"SHUT OK",7)== 0)
-    {
-      retval = RESP_SHUT_OK;
-      //UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
-      Uart_buffer_reset(2);
-    }    
-    else if (memcmp (uart2_RX_data,"+SGACT: ",8)== 0)          // for IP Address processing ????????? confirm response format 
-    {
-             UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
-       Uart_buffer_reset(2);
-    }
-    else if (memcmp (uart2_RX_data,"+CMT: ",6)== 0)            // for SMS Processing
-    {
-             UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
-       Uart_buffer_reset(2);
-    }
-    else if (memcmp (uart2_RX_data,NMEA_ID, 7) == 0)           //This is a good packet we can go ahead and parse it
-    {
-      
-         // Uart_buffer_reset(2);
-         // UARTPrintF ("RIGHT_ID\n", 9);
-         
-          //memset(uart2_RX_data,'0',strlen(uart2_RX_data));
-          
-          //Time 
-          
-          
+        
           for (n=0; n<6;n++)
           {
             length = sprintf (src,"%c",uart2_RX_data[7+n]);
@@ -255,17 +169,99 @@ byte at_parse (byte t)
           }
           
           //This info may not be very necessary;no need to test it (TBD)
-         /* 
+         
           for (v=0; v<24; v++)
           {
-             length = sprintf (src,"%d",uart2_RX_data[65+v]);
-             UARTPrintF(src, length);
+            // length = sprintf (src,"%d",uart2_RX_data[65+v]);
+            // UARTPrintF(src, length);
           }
-          */
-        
-    Uart_buffer_reset(2);        
-    response_flags = RESP_NMEA_DATA;         
+         
+            
+                     
     }
+ 
+    else if (memcmp (uart2_RX_data,"OK", 2) == 0)
+    {
+       retval = RESP_OK; // Await this response
+      
+       //UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
+       Uart_buffer_reset(2);
+    }
+    else if (memcmp (uart2_RX_data,"ERROR",5)== 0)
+    {
+       //UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
+       Uart_buffer_reset(2);
+    }
+    else if (memcmp (uart2_RX_data,"+COPS: ",7)== 0)
+    {
+             UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
+       Uart_buffer_reset(2);
+    }
+    else if (memcmp (uart2_RX_data,"+CREG: ",7)== 0)
+    {
+             UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
+       Uart_buffer_reset(2);
+    }
+    else if (memcmp (uart2_RX_data,"+CGATT: ",8)== 0)
+    {
+             UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
+       Uart_buffer_reset(2);
+    }
+    else if (memcmp (uart2_RX_data,"STATE: IP INITIAL",17)== 0)
+    {
+             UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
+       Uart_buffer_reset(2);
+    }
+    else if (memcmp (uart2_RX_data,"CONNECT OK",10)== 0)
+    {
+             UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
+       Uart_buffer_reset(2);
+    }
+    else if (memcmp (uart2_RX_data,"CONNECT FAIL",12)== 0)
+    {
+             UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
+       Uart_buffer_reset(2);
+    }
+    else if (memcmp (uart2_RX_data,"+CME ERROR",10)== 0)
+    {
+             UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
+       Uart_buffer_reset(2);
+    }
+    else if (memcmp (uart2_RX_data,"ALREADY CONNECT",15)== 0)
+    {
+             UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
+       Uart_buffer_reset(2);
+    }
+    else if (memcmp (uart2_RX_data,"SEND OK",7)== 0)
+    {
+             UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
+       Uart_buffer_reset(2);
+    }
+    else if (memcmp (uart2_RX_data,"CLOSE OK",7)== 0)
+    {
+      UARTPrintF ("Comms FSM Exiting....",21);
+      exit(0);
+     // break;
+      // UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
+      // Uart_buffer_reset(2);
+    }
+    else if (memcmp (uart2_RX_data,"SHUT OK",7)== 0)
+    {
+      retval = RESP_SHUT_OK;
+      //UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
+      Uart_buffer_reset(2);
+    }    
+    else if (memcmp (uart2_RX_data,"+SGACT: ",8)== 0)          // for IP Address processing ????????? confirm response format 
+    {
+             UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
+       Uart_buffer_reset(2);
+    }
+    else if (memcmp (uart2_RX_data,"+CMT: ",6)== 0)            // for SMS Processing
+    {
+             UARTPrintF (uart2_RX_data, strlen(uart2_RX_data));
+       Uart_buffer_reset(2);
+    }
+
     else if ( ( uart2_RX_data[0] >= 0x30 ) && ( uart2_RX_data[0] <= 0x39 ) )    // IMEI message should start with a number.       
     {
       if (strlen (uart2_RX_data) != 14)                      //IMEI is 14-bytes; this number is surely not IMEI!
@@ -287,7 +283,7 @@ byte at_parse (byte t)
                 UARTPrintF(src,length);              
             }
           Uart_buffer_reset(2);
-          response_flags = RESP_IMEI;
+          retval = RESP_IMEI;
       }
       
     }
@@ -296,6 +292,8 @@ byte at_parse (byte t)
           Uart_buffer_reset(2);                  // TRASH AREA, JUST DISCARD IT :(
     }   
     
+     Uart_buffer_reset(2);
+     
     return retval;
     
 }
@@ -404,7 +402,8 @@ void gsm_tick (void)
 
 void gsm_gps_response_matching (byte _parse_flags )
 {
- // byte parse_flags = 0;
+ // byte parse_flags = 0;   
+  byte leng;
    
   switch (gsm_state)
   {
@@ -458,11 +457,13 @@ void gsm_gps_response_matching (byte _parse_flags )
       
   case STATE_SETCGATT:
     if (_parse_flags == RESP_OK)
-      gsm_AT_IP_INITIAL_MODE ();
-     if(ip_initial_mode_retry == 2)
-     {
-       gsm_AT_SETAPN_START_TASK();
-     }
+      //gsm_AT_IP_INITIAL_MODE ();
+      gsm_AT_SETAPN_START_TASK();
+    
+     //if(ip_initial_mode_retry == 2)
+     //{
+     //  gsm_AT_SETAPN_START_TASK();
+    // }
     break;
    
     /*
@@ -475,30 +476,48 @@ void gsm_gps_response_matching (byte _parse_flags )
     
   case STATE_SETAPN_START_TASK:
      if (_parse_flags == RESP_OK)
+       gsm_AT_BRINGUP_WIRELESS_CONNECTION_GPRS ();
+       /*
        gsm_AT_IP_INITIAL_MODE ();
        if(ip_initial_mode_retry == 3)
        {
           gsm_AT_BRINGUP_WIRELESS_CONNECTION_GPRS ();
           ip_initial_mode_retry = 0;
        }
+       */
      break;
        
   case STATE_BRINGUP_WIRELESS_CONNECTION_GPRS:
     if (_parse_flags == RESP_OK)
+              leng = sprintf(src, "Sequencer0:%d",gsm_state);
+        UARTPrintF(src,leng);
       gsm_AT_GET_IP();
     break;
     
   case STATE_GET_IP:
      if (_parse_flags == RESP_OK)
        gps_AT_GET_LOCATION_INFO ();
+     
+        leng = sprintf(src, "AT_INFO_SENT:%d",gsm_state);
+        UARTPrintF(src,leng);
+          
+    
      break;
      
   case STATE_GPS_LOCATION_INFOR:
-    if (_parse_flags == RESP_NMEA_DATA)
-      gsm_AT_GET_IMEI();
+      // byte leng;
+       
+        leng = sprintf(src, "Sequencer2:%d",gsm_state);
+        UARTPrintF(src,leng);
+       
+      if (_parse_flags == RESP_OK)
+      {
+          gsm_AT_GET_IMEI(); 
+      }
+ 
     break;
     
-  case STATE_GETIMEI:
+  case STATE_GETIMEI:  
     if (_parse_flags == RESP_IMEI)
       gsm_AT_CONNECT_TO_SERVER();
     break;
